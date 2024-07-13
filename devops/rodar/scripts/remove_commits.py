@@ -35,6 +35,6 @@ def percorrer_diretorio(diretorio):
     except Exception as e:
         print(f"Ocorreu um erro ao percorrer o diretório {diretorio}: {e}")
 
-diretorio_alvo = 'INSIRA O CAMINHO PARA O DIRETÓRIO'
+diretorio_alvo = '../applications'
 
 percorrer_diretorio(diretorio_alvo)

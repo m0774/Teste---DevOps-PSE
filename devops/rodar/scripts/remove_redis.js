@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const diretorioRaiz = 'INSIRA O CAMINHO PARA O DIRETÓRIO'; 
+const diretorioRaiz = '../applications'; 
 
 function removerConfigRedis(caminho) {
     fs.readFile(caminho, 'utf8', (err, data) => {
