@@ -25,7 +25,7 @@ ports:
     protocol: TCP
 ``` -->
 
-- Caso uma configuração esteja com `enable: false` remover os demais campos dela;
+<!-- - Caso uma configuração esteja com `enable: false` remover os demais campos dela; -->
 
 - Alterar o `requests` e `limits` de CPU para `10m` e `100m`, respectivamente.
 
