@@ -1,13 +1,11 @@
-remove_commits:
-
-Script feito para apagar todos os commits dos seus aquivos. 
-Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: python remove_commits.py
+### Abaixo irei deixar todos os scripts criados, a funcionalidade de cada um e como faz para rodar cada um deles. 
 
 
 remove_redis:
 
 Script feito para apagar todas as chaves 'redis' e 'redisConfig' dos seus aquivos. 
-Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: node remove_redis.js
+Para rodar o script primeiramente você vai precisar instalar a biblioteca PyYAML usando o seguinte comando no terminal da pasta de scripts: pip install pyyaml
+e então utilize o seguinte comando no terminal da pasta de scripts: python remove_redis.py
 
 
 remove_annotations:
@@ -20,6 +18,12 @@ att_version:
 
 Script feito para atualizar a versão de todos Kustomization para `2.2.1`. 
 Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: python att_version.py
+
+
+remove_commits:
+
+Script feito para apagar todos os commits dos seus aquivos. 
+Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: python remove_commits.py
 
 
 remove_duplicate_settings:
@@ -54,3 +58,9 @@ remove_false:
 
 Script feito para caso uma configuração esteja com `enable: false` remover os demais campos dela
 Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: python remove_false.py
+
+
+adjust_cpu:
+
+Script feito alterar o `requests` e `limits` de CPU para `10m` e `100m`, respectivamente.
+Para rodar o script utilize o seguinte comando no terminal da pasta de scripts: python adjust_cpu.py

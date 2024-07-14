@@ -1,30 +1,30 @@
 import os
 
-def update_version_in_file(file_path, old_versions, new_version):
+def atualizar_versao_no_arquivo(caminho_arquivo, versoes_antigas, nova_versao):
     try:
-        with open(file_path, 'r', encoding='utf-8') as file:
-            lines = file.readlines()
+        with open(caminho_arquivo, 'r', encoding='utf-8') as file:
+            linhas = file.readlines()
 
-        with open(file_path, 'w', encoding='utf-8') as file:
-            for line in lines:
-                for old_version in old_versions:
-                    if f'version: {old_version}' in line:
-                        line = line.replace(f'version: {old_version}', f'version: {new_version}')
-                file.write(line)
+        with open(caminho_arquivo, 'w', encoding='utf-8') as file:
+            for linha in linhas:
+                for versao_antiga in versoes_antigas:
+                    if f'version: {versao_antiga}' in linha:
+                        linha = linha.replace(f'version: {versao_antiga}', f'version: {nova_versao}')
+                file.write(linha)
         
-        print(f"Updated version in: {file_path}")
+        print(f"Versão atualizada em: {caminho_arquivo}")
     except Exception as e:
-        print(f"Error processing {file_path}: {e}")
+        print(f"Erro ao processar {caminho_arquivo}: {e}")
 
-def traverse_directory(directory, old_versions, new_version):
-    for root, _, files in os.walk(directory):
+def percorrer_diretorio(diretorio, versoes_antigas, nova_versao):
+    for root, _, files in os.walk(diretorio):
         for file in files:
             if file == 'kustomization.yaml':
-                file_path = os.path.join(root, file)
-                update_version_in_file(file_path, old_versions, new_version)
+                caminho_arquivo = os.path.join(root, file)
+                atualizar_versao_no_arquivo(caminho_arquivo, versoes_antigas, nova_versao)
 
 if __name__ == "__main__":
-    target_directory = '../applications'
-    old_versions = ['2.2.0', '2.1.0', '1.0.1']
-    new_version = '2.2.1'
-    traverse_directory(target_directory, old_versions, new_version)
+    diretorio_alvo = '../applications'
+    versoes_antigas = ['2.2.0', '2.1.0', '1.0.1']
+    nova_versao = '2.2.1'
+    percorrer_diretorio(diretorio_alvo, versoes_antigas, nova_versao)
